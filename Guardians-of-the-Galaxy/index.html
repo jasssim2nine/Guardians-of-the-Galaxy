@@ -1,14 +1,228 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="device-width=width,initial-scale =1.0" />
-    <title>Gaurdian of the Galaxy</title>
-    <!--CSS-->
-    <link href="css/normalize.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardians of the Galaxy</title>
+
+    <!-- CSS Section -->
+    <link href="css/main.css" rel="stylesheet" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <link href="css/test.css" rel="stylesheet" />
+
 </head>
-<body>
-    <canvas id="theCanvas" width="600" height="400"></canvas>
-</body>
+
+<body onload="bodyLoaded();">
+    <!--- bodyLoaded() follows resource loading and starts the splash screen
+                         and can be found in the Loader.js file --->
+    <!--Jquery-->
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+        <header class="masthead">
+            <!--Canvas-->
+            <div class="container-fluid">
+                <canvas id="theCanvas" width="600" height="400"></canvas>
+            </div>
+        </header>
+
+        <!-- Fly-in navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top" id="nav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Guardians of the Galaxy</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Play</a></li>
+                        <li><a href="#section2">About Code</a></li>
+                        <li><a href="#section3">Github</a></li>
+                        <li><a href="#section4">Contact us</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container -->
+        </div><!--/.navbar -->
+        <!-- Begin page content -->
+
+
+        <div class="divider" id="section2"></div>
+
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <h1>About the code</h1>
+                <hr>
+                <p><a style="text-decoration:none;">AfterEffect.js</a> is for little explosions or graphics that last a short duration, but don't collide with any other game objects.</p>
+                <p><a style="text-decoration:none;">Background.js</a> handles the scrolling/repeating background image and the foreground image - which scrolls at a different rate. I borrowed the foreground graphic from this tutorial on parallax scrolling.</p>
+                <p><a style="text-decoration:none;">Collision.js</a> contains the basic collision detection algorithm used in this game. (Simple bounding box)</p>
+                <p><a style="text-decoration:none;">Enemy.js</a> is the class of all enemy ships in the game.</p>
+                <p><a style="text-decoration:none;">EnemyShot.js</a> is the class of all enemy projectiles in the game.</p>
+                <p><a style="text-decoration:none;">FloatyText.js</a> handles all of the little flashing, floating messages you get when you capture a powerup.</p>
+                <p><a style="text-decoration:none;">Laser.js</a> The next weapon class up from the PeaShooter.</p>
+                <p><a style="text-decoration:none;">PeaShooter.js</a> is the basic weapon that your ship starts with.</p>
+                <p><a style="text-decoration:none;">Powerup.js</a> is the object representing the goodies that the enemy ships drop when destroyed.</p>
+                <p><a style="text-decoration:none;">Ship.js</a> the player's ship.</p>
+                <p><a style="text-decoration:none;">Shot.js</a> the player's projectiles.</p>
+                <p><a style="text-decoration:none;">Sortie.js</a> a container class for a cluster of enemy ships, and what time they should be launched at. Used by LevelDirector.</p>
+                <hr>
+                <div class="divider"></div>
+
+            </div><!--/col-->
+        </div><!--/container-->
+
+        <div class="divider"></div>
+
+        <section class="bg-3">
+            <div class="col-sm-6 col-sm-offset-3 text-center"><h2>Clients &amp; Partners</h2></div>
+        </section>
+
+        <div class="divider" id="section3"></div>
+
+        <div class="bg-4">
+            <div class="container">
+                <div class="row">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                        Aliquam in felis sit amet augue.
+                    </p>
+                </div><!--/row-->
+            </div><!--/container-->
+        </div>
+
+        <div class="divider" id="section4"></div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-10 col-sm-offset-1">
+                <h1>Location</h1>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                Aliquam in felis sit amet augue.
+            </div>
+
+
+            <hr>
+
+        </div><!--/row-->
+
+        <div class="divider" id="section5"></div>
+
+        <div class="row">
+
+            <hr>
+
+            <div class="col-sm-9 col-sm-offset-1">
+
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <h1>Contact Us</h1>
+                    </div>
+                    <div class="col-xs-4">
+                        <input class="form-control" id="firstName" name="name" placeholder="Your Name" type="text">
+                    </div>
+                    <div class="col-xs-6">
+                        <input class="form-control" id="organization" name="organization" placeholder="Company or Organization" type="text">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-5">
+                        <input class="form-control" name="email" placeholder="Email" type="text">
+                    </div>
+                    <div class="col-xs-5">
+                        <input class="form-control" name="phone" placeholder="Phone" type="text">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-10">
+                        <textarea class="form-control" placeholder="Comments"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-10">
+                        <button class="btn btn-default pull-right">Contact Us</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!--/row-->
+
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+
+                <ul class="list-inline center-block">
+                    <li><a href="http://facebook.com/bootply"><img src="/assets/example/soc_fb.png"></a></li>
+                    <li><a href="http://twitter.com/bootply"><img src="/assets/example/soc_tw.png"></a></li>
+                    <li><a href="http://google.com/+bootply"><img src="/assets/example/soc_gplus.png"></a></li>
+                    <li><a href="http://pinterest.com/in1"><img src="/assets/example/soc_pin.png"></a></li>
+                </ul>
+
+            </div><!--/col-->
+        </div><!--/container-->
+
+    </div><!--/wrap-->
+
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">Copyright �2014 EAJAY, Inc.</p>
+        </div>
+    </div>
+
+    <ul class="nav pull-right scroll-top">
+        <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+    </ul>
+
+
+    <div class="modal" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal">�</button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div id="modalCarousel" class="carousel">
+
+                        <div class="carousel-inner">
+
+                        </div>
+
+                        <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                        <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Scripts/main.js"></script>
+
+</body><!--EO body-->
 </html>

@@ -1,0 +1,28 @@
+#dbg {
+     font-family: "Helvetica", cursive, sans-serif;
+     border: 1px solid black;
+     width: 600;
+   }
+
+body {
+    //background:#000;
+    //color:white;
+    //font-family: Arial,Helvetica,Sans-serif;
+}
+
+a {
+    color: #009de9;
+    outline: none;
+} 
+
+a:hover {
+    text-decoration: none;
+}
+   
+canvas { 
+    border: 1px solid black; 
+}
+
+canvas#theCanvas {
+    //width: 767px;
+}

@@ -65,9 +65,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\app.css" />
-    <Content Include="css\normalize.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\test.css" />
     <Content Include="index.html" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
