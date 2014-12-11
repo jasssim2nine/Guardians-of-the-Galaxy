@@ -129,6 +129,7 @@
     <Content Include="Scripts\objects\Background.js" />
     <Content Include="Scripts\preload.js" />
     <Content Include="Scripts\Sound.js" />
+    <Content Include="Scripts\states\LevelDirector.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +138,6 @@
   <ItemGroup>
     <Folder Include="Scripts\lib\" />
     <Folder Include="Scripts\powers\" />
-    <Folder Include="Scripts\states\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
