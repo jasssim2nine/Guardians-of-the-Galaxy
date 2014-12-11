@@ -127,10 +127,13 @@
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\managers\GameSounds.js" />
     <Content Include="Scripts\objects\Background.js" />
+    <Content Include="Scripts\objects\Enemy.js" />
+    <Content Include="Scripts\objects\Ship.js" />
     <Content Include="Scripts\objects\Sortie.js" />
     <Content Include="Scripts\preload.js" />
     <Content Include="Scripts\Sound.js" />
     <Content Include="Scripts\states\LevelDirector.js" />
+    <Content Include="Scripts\objects\PeaShooter.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
