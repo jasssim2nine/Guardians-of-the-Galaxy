@@ -120,10 +120,13 @@
     <Content Include="css\main.css" />
     <Content Include="css\test.css" />
     <Content Include="index.html" />
+    <Content Include="Scripts\controller\Keyboard.js" />
+    <Content Include="Scripts\controller\Mouse.js" />
     <Content Include="Scripts\includes\load.html" />
     <Content Include="Scripts\Loader.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\managers\GameSounds.js" />
+    <Content Include="Scripts\objects\Background.js" />
     <Content Include="Scripts\preload.js" />
     <Content Include="Scripts\Sound.js" />
     <Content Include="Web.config" />
@@ -132,9 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Scripts\controller\" />
     <Folder Include="Scripts\lib\" />
-    <Folder Include="Scripts\objects\" />
     <Folder Include="Scripts\powers\" />
     <Folder Include="Scripts\states\" />
   </ItemGroup>
