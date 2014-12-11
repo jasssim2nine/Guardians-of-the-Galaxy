@@ -130,7 +130,9 @@
     <Content Include="Scripts\managers\GameSounds.js" />
     <Content Include="Scripts\objects\Background.js" />
     <Content Include="Scripts\objects\Enemy.js" />
+    <Content Include="Scripts\objects\FloatyText.js" />
     <Content Include="Scripts\objects\Ship.js" />
+    <Content Include="Scripts\powers\EnemyShot.js" />
     <Content Include="Scripts\powers\Laser.js" />
     <Content Include="Scripts\powers\Powerup.js" />
     <Content Include="Scripts\powers\Shot.js" />
