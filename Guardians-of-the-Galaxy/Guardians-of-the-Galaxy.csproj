@@ -131,6 +131,9 @@
     <Content Include="Scripts\objects\Background.js" />
     <Content Include="Scripts\objects\Enemy.js" />
     <Content Include="Scripts\objects\Ship.js" />
+    <Content Include="Scripts\powers\Laser.js" />
+    <Content Include="Scripts\powers\Powerup.js" />
+    <Content Include="Scripts\powers\Shot.js" />
     <Content Include="Scripts\objects\Sortie.js" />
     <Content Include="Scripts\preload.js" />
     <Content Include="Scripts\Sound.js" />
@@ -143,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\lib\" />
-    <Folder Include="Scripts\powers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
