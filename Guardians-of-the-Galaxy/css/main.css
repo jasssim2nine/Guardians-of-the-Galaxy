@@ -24,5 +24,6 @@ canvas {
 }
 
 canvas#theCanvas {
-    //width: 767px;
+    width:100%;
+   height:auto;
 }
