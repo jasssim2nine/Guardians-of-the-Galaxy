@@ -78,6 +78,10 @@ function ev_mousedown(ev)
          g_context.fillText("you the global blockbuster franchises of Iron Man, Thor, ", 60, 125);
          g_context.fillText("Captain America and The Avengers,", 60, 150);
          g_context.fillText("Comes a new team - the Guardians of the Galaxy.", 60, 175);
+            
+         g_context.fillText("Collect the powerups ,treasures and", 60, 200);
+         g_context.fillText("save the from the enemies", 60, 225);
+
 
          g_context.fillStyle = "white";
          g_context.fillText("arrow keys = movement",60,285);
