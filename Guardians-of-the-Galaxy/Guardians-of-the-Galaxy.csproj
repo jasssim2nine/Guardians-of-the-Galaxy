@@ -122,6 +122,8 @@
     <Content Include="index.html" />
     <Content Include="Scripts\includes\load.html" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\managers\GameSounds.js" />
+    <Content Include="Scripts\preload.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -130,7 +132,6 @@
   <ItemGroup>
     <Folder Include="Scripts\controller\" />
     <Folder Include="Scripts\lib\" />
-    <Folder Include="Scripts\managers\" />
     <Folder Include="Scripts\objects\" />
     <Folder Include="Scripts\powers\" />
     <Folder Include="Scripts\states\" />
