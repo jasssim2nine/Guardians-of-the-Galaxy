@@ -121,9 +121,11 @@
     <Content Include="css\test.css" />
     <Content Include="index.html" />
     <Content Include="Scripts\includes\load.html" />
+    <Content Include="Scripts\Loader.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\managers\GameSounds.js" />
     <Content Include="Scripts\preload.js" />
+    <Content Include="Scripts\Sound.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
