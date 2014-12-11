@@ -57,6 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\sounds\boss_loop.ogg" />
+    <Content Include="assets\sounds\level_1_loop.ogg" />
+    <Content Include="assets\sounds\level_1_preloop.ogg" />
+    <Content Include="assets\sounds\level_2_loop.ogg" />
+    <Content Include="assets\sounds\level_passed.ogg" />
+    <Content Include="assets\sounds\loading_music.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,9 +71,56 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\artifact_chard.png" />
+    <Content Include="assets\images\artifact_skull.png" />
+    <Content Include="assets\images\command_ship.png" />
+    <Content Include="assets\images\double_image.png" />
+    <Content Include="assets\images\enemy_artifact.png" />
+    <Content Include="assets\images\enemy_artifact_2.png" />
+    <Content Include="assets\images\enemy_small.png" />
+    <Content Include="assets\images\enemy_small_2.png" />
+    <Content Include="assets\images\enemy_small_2_special.png" />
+    <Content Include="assets\images\enemy_small_3.png" />
+    <Content Include="assets\images\enemy_small_4.png" />
+    <Content Include="assets\images\enemy_small_4_special.png" />
+    <Content Include="assets\images\enemy_small_special.png" />
+    <Content Include="assets\images\foreground.png" />
+    <Content Include="assets\images\foreground_light.png" />
+    <Content Include="assets\images\gem_image.png" />
+    <Content Include="assets\images\gun_image.png" />
+    <Content Include="assets\images\loading.png" />
+    <Content Include="assets\images\ship_center.png" />
+    <Content Include="assets\images\ship_death_1.png" />
+    <Content Include="assets\images\ship_death_2.png" />
+    <Content Include="assets\images\ship_death_3.png" />
+    <Content Include="assets\images\ship_death_4.png" />
+    <Content Include="assets\images\ship_death_5.png" />
+    <Content Include="assets\images\ship_death_6.png" />
+    <Content Include="assets\images\ship_death_7.png" />
+    <Content Include="assets\images\ship_down_1.png" />
+    <Content Include="assets\images\ship_down_2.png" />
+    <Content Include="assets\images\ship_down_3.png" />
+    <Content Include="assets\images\ship_icon.png" />
+    <Content Include="assets\images\ship_up_1.png" />
+    <Content Include="assets\images\ship_up_2.png" />
+    <Content Include="assets\images\ship_up_3.png" />
+    <Content Include="assets\images\shot_image.png" />
+    <Content Include="assets\images\sky.jpg" />
+    <Content Include="assets\images\speed_image.png" />
+    <Content Include="assets\images\splash_screen.jpg" />
+    <Content Include="assets\images\splode_1.png" />
+    <Content Include="assets\images\splode_2.png" />
+    <Content Include="assets\images\splode_3.png" />
+    <Content Include="assets\images\splode_4.png" />
+    <Content Include="assets\images\splode_5.png" />
+    <Content Include="assets\images\splode_6.png" />
+    <Content Include="assets\images\splode_7.png" />
+    <Content Include="assets\images\starfield.jpg" />
+    <Content Include="assets\images\title.png" />
     <Content Include="css\main.css" />
     <Content Include="css\test.css" />
     <Content Include="index.html" />
+    <Content Include="Scripts\includes\load.html" />
     <Content Include="Scripts\main.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -75,8 +128,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\images\" />
-    <Folder Include="assets\sounds\" />
     <Folder Include="Scripts\controller\" />
     <Folder Include="Scripts\lib\" />
     <Folder Include="Scripts\managers\" />
