@@ -65,10 +65,23 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\app.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\images\" />
+    <Folder Include="assets\sounds\" />
+    <Folder Include="Scripts\controller\" />
+    <Folder Include="Scripts\lib\" />
+    <Folder Include="Scripts\managers\" />
+    <Folder Include="Scripts\objects\" />
+    <Folder Include="Scripts\powers\" />
+    <Folder Include="Scripts\states\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
