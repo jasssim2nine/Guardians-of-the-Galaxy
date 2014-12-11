@@ -125,6 +125,8 @@
     <Content Include="Scripts\includes\load.html" />
     <Content Include="Scripts\Loader.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\managers\AfterEffect.js" />
+    <Content Include="Scripts\managers\Collision.js" />
     <Content Include="Scripts\managers\GameSounds.js" />
     <Content Include="Scripts\objects\Background.js" />
     <Content Include="Scripts\objects\Enemy.js" />
