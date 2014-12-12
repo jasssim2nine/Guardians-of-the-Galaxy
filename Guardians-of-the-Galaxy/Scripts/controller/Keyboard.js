@@ -1,8 +1,9 @@
+//key down function for smooth scrolling
 function keyDown(e)
 {
    e.preventDefault();
 
-   //dbg(e.keyCode + "down", false);
+   
 
    if ( e.keyCode == 80 )         // p
    {
@@ -33,11 +34,12 @@ function keyDown(e)
       g_ship.fire(true);
    }
 }
+//key-up function for smooth scrolling
 function keyUp(e)
 {
    e.preventDefault();
 
-   //dbg(e.keyCode + "up", false);
+ 
 
    if ( e.keyCode == 38 )              // up arrow
    {

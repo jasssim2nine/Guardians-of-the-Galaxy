@@ -10,7 +10,7 @@ function Laser()
 
  this.myName = "laser";
 }
-
+//function to repeat/generate 1 or more laser shots
 Laser.prototype.repeat = function()
 {
  if ( this.myFrameCounter > this.myRepeatRate )
@@ -21,7 +21,7 @@ Laser.prototype.repeat = function()
 this.myFrameCounter++;
 return false;
 }
-
+//function to fire laser shots
 Laser.prototype.fire = function()
 {
  var sos = 0;            // shots on screen

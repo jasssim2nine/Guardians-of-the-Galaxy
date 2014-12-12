@@ -1,3 +1,5 @@
+
+//creating the ship,lives icon and the animation frames
 function Ship(lives, score)
 {
    this.myDying = false;
@@ -51,7 +53,7 @@ function Ship(lives, score)
    this.myWeapon = new PeaShooter();
 }
 
-
+//function to count the number of deaths 
 Ship.prototype.die = function()
 {
    g_explodeSound.play();
@@ -71,13 +73,14 @@ Ship.prototype.die = function()
    this.myVelY = 0;
    this.myMomentum = 0;
    this.myFrameCounter = 0;
-
+//loose the doubler power-up when ship dies/explode
    if ( this.myWeapon.myDoubled )
    {
       this.myWeapon.myDoubled = false;
       var ae = new AfterEffect("lose_double", this.myX, this.myY, 9, -9);
       g_afterEffects.push(ae);
    }
+       //loose the laser power-up when ship dies/explode
    else if ( this.myWeapon.myName == "laser" )
    {
       if ( this.myWeapon.myMaxOnScreen > 1 )
@@ -88,6 +91,7 @@ Ship.prototype.die = function()
       }
       else
       {
+          //loose the gun power-up when ship dies/explode
          this.myWeapon = new PeaShooter();
          var ae = new AfterEffect("lose_gun", this.myX, this.myY, 9, -9);
          g_afterEffects.push(ae);
@@ -95,6 +99,7 @@ Ship.prototype.die = function()
    }
    else
    {
+       //loose the +1 power-up when ship dies/explode
       if ( this.myWeapon.myMaxOnScreen > 3 )
       {
          this.myWeapon.myMaxOnScreen--;
@@ -112,7 +117,7 @@ Ship.prototype.die = function()
    if (this.myLives < 0 )
       g_gameState = "game_over";
 }
-
+//function to go to game over state once the ship has 0 lives
 Ship.prototype.render = function()
 {
    if ( g_gameState == "game_over" )
@@ -153,8 +158,7 @@ Ship.prototype.render = function()
       this.myDeathCounter++;
    }
 
-   //dbg("up   = " + this.myUp + "<br>", false);
-   //dbg("down = " + this.myDown, true);
+   
    if (this.myVisible)
    {
       if ( this.myFiring && this.myWeapon.repeat())
@@ -250,7 +254,7 @@ Ship.prototype.renderStatus = function()
    }
 }
 
-
+//smooth scrolling up
 Ship.prototype.up = function(engaged)
 {
    if ( this.myVisible == false )
@@ -276,6 +280,7 @@ Ship.prototype.up = function(engaged)
 
    this.myUp = true;
 }
+//smooth scrolling down
 Ship.prototype.down = function(engaged)
 {
    if ( this.myVisible == false )
@@ -301,6 +306,7 @@ Ship.prototype.down = function(engaged)
 
    this.myDown = true;
 }
+//smooth scrolling left
 Ship.prototype.left = function(engaged)
 {
    if ( this.myVisible == false )
@@ -319,6 +325,7 @@ Ship.prototype.left = function(engaged)
    this.myVelX = -1 * this.myVelocity;
    this.myLeft = true;
 }
+//smooth scrolling right
 Ship.prototype.right = function(engaged)
 {
    if ( this.myVisible == false )
@@ -358,7 +365,7 @@ Ship.prototype.fire = function(engaged)
       }
    }
 }
-
+//power generator
 Ship.prototype.renderPowers = function()
 {
    if ( g_gameState == "game_over" )

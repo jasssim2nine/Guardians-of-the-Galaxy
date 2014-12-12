@@ -1,3 +1,4 @@
+//sound decoding
 
 var g_soundDataMap =
 {

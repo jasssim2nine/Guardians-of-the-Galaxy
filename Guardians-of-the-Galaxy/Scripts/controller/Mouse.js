@@ -1,5 +1,6 @@
 /// <reference path="../Sound.js" />
 
+//ev_mouseup function for mousehover in the canvas
 
 function ev_mouseup(ev)
 {
@@ -11,8 +12,8 @@ function ev_mouseup(ev)
      x = ev.offsetX;
      y = ev.offsetY;
    }
-   else if (ev.layerX || ev.layerX == 0)  // browser dep , -8 is a hack due to
-   {                                      // the canvas being in a table
+   else if (ev.layerX || ev.layerX == 0)  
+   {                                      
      x = ev.layerX - g_canvas.offsetLeft -8;
      y = ev.layerY - g_canvas.offsetTop -8;
    }
@@ -33,6 +34,7 @@ function ev_mouseup(ev)
    g_ship.right(false);
    g_ship.down(false);
 }
+//ev_mousedown function for mousehover in the canvas
 
 function ev_mousedown(ev)
 {
@@ -44,12 +46,12 @@ function ev_mousedown(ev)
      x = ev.offsetX;
      y = ev.offsetY;
    }
-   else if (ev.layerX || ev.layerX == 0) // browser dep , -8 is a hack due to
-   {                                     // the canvas being in a table
+   else if (ev.layerX || ev.layerX == 0) 
+   {                                     
      x = ev.layerX - g_canvas.offsetLeft -8;
      y = ev.layerY - g_canvas.offsetTop -8;
    }
-
+    //a simple splash screen before menu state
    if (g_gameState == "splash")
    {
       if ( x > 50 && x < 200 && y > 300 && y < 330 )
@@ -64,6 +66,7 @@ function ev_mousedown(ev)
          document.getElementById("loading_music").pause();
          main();
       }
+          //displays the instructions state once the instructions button is clicked
       else if ( x > 50 && x < 200 && y > 340 && y < 370 )
       {
          var bg    = document.getElementById("splash_screen");
@@ -100,7 +103,7 @@ function ev_mousedown(ev)
          g_gameState = "instructions";
 
       }
-
+       //checks whether the onscreen control checbox is selected
       if ( x > 400 && x < 420 && y > 283 && y < 303 )
       {
          g_onscreenControls = !g_onscreenControls;
@@ -122,6 +125,7 @@ function ev_mousedown(ev)
          }
       }
    }
+
    else if (g_gameState == "instructions")
    {
       if ( x > 370 && x < 370+150 && y > 290 && y < 290+30 )
@@ -131,7 +135,7 @@ function ev_mousedown(ev)
    }
    else
    {
-      //dbg("detected mouse ingame <br>", true);
+      
       var ox = 40;
       var oy = 300;
       var ow = 30;
@@ -157,10 +161,9 @@ function ev_mousedown(ev)
 }
 
 
-//
-// this pretty much only exists so that we can light up the buttons as
-// the user hovers over them
-//
+
+//function to show the mousehover on the onscreen game controls buttons
+
 function ev_mousemove(ev)
 {
    var x;
@@ -171,7 +174,7 @@ function ev_mousemove(ev)
      x = ev.offsetX;
      y = ev.offsetY;
    }
-   else if (ev.layerX || ev.layerX == 0)       // browser dep, the -8 is a hack
+   else if (ev.layerX || ev.layerX == 0)       
    {
      x = ev.layerX - g_canvas.offsetLeft -8;
      y = ev.layerY - g_canvas.offsetTop -8;
@@ -261,7 +264,7 @@ function ev_mousemove(ev)
 
    // render onscreen controls checkbox
    g_context.fillStyle = "black"; 
-   g_context.fillRect(400,283,20,20);  //ctrls checkbox
+   g_context.fillRect(400,283,20,20); 
 
    if ( g_onscreenControls )
    {
@@ -290,5 +293,5 @@ function ev_mousemove(ev)
    if (neither)
       this.dink=true;
 
-   //dbg("X = " + x + "<br>" + "Y = " + y, false);
+ 
 }

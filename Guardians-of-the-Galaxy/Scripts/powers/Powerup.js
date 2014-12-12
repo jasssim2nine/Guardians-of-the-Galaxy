@@ -1,4 +1,5 @@
-function Powerup(name,x,y,velx,vely)
+//function to display powerup
+function Powerup(name, x, y, velx, vely)
 {
    this.myName = name;
 
@@ -19,7 +20,7 @@ function Powerup(name,x,y,velx,vely)
 
    this.myFrameCounter = 0;
 }
-
+//function to display the effects when the power up is collected.
 Powerup.prototype.applyEffect = function()
 {
    this.mySound.play();
@@ -117,7 +118,7 @@ Powerup.prototype.applyEffect = function()
    }
 
 }
-
+//remove the power up once it is collected
 Powerup.prototype.render = function()
 {
    var pullWidth  = g_canvas.width  - this.myX;

@@ -1,6 +1,8 @@
 ﻿/// <reference path="managers/GameSounds.js" />
 /// <reference path="managers/Sound.js" />
 /// <reference path="Loader.js" />
+
+//initialize game components
 var g_canvas;
 var g_context;
 var g_soundsLoaded;
@@ -49,16 +51,16 @@ var g_showAccuracy;
 var g_enemiesDestroyed;
 
 
-//
+
 // main() is called once the game has loaded and the user has clicked
 // on the "new game" button on the splash screen. This is a clean slate
 // with no registered timers or event listeners.
-//
+
 function main() {
     var level_1_loop = document.getElementById("level_1_loop");
     var bossLoop = document.getElementById("boss_loop");
 
-    //dbg("engine = " + navigator.userAgent, false);
+   
     g_rainbow = new Array("yellow", "orange", "white", "red");
 
     document.addEventListener('keydown', keyDown, false);
@@ -84,16 +86,15 @@ function main() {
     g_gameState = "setup";
     g_levelDirector = new LevelDirector();
 
-    //
+    
     // telling the level director to start will put the clock and
-    // render loops on interval timers
-    //
+   
     g_levelDirector.startLevel();
 }
 
-//
+
 // map a sound name to a global audio object
-//
+
 function lookupSound(name) {
     if (name == "double_sound")
         return g_double_sound;
@@ -106,38 +107,36 @@ function lookupSound(name) {
     else if (name == "speed_sound")
         return g_speed_sound;
 
-    dbg("Failed sound lookup: " + name, false);
-
     return null;
 }
 
-//
+
 // the level director will kick off an interval that calls
 // this function every 100ms 
-//
+
 function clockLoop() {
     if (g_paused)
         return;
 
     g_levelDirector.myClock += 100;
-    //dbg("Clock = " +  g_levelDirector.myClock, false);
+    
 
     g_levelDirector.launchSorties();
     g_levelDirector.gameEvents();
 }
 
-//
+
 // the LevelDirector will kick off an interval that calls this function
 // which redraws the entire screen. that interval determines the game's
 // fps.
-//
+
 function renderLoop() {
     if (g_paused)
         return;
 
     g_background.render();
     g_ship.render();
-
+    //holds the remaining/current power-ups
     var remainingPowerups = new Array();
     for (var i = 0; i < g_powerups.length; ++i) {
         if (g_powerups[i].render()) {
@@ -147,7 +146,7 @@ function renderLoop() {
     }
     delete g_powerups;
     g_powerups = remainingPowerups;
-
+    //floaty texts are stored
     var remainingText = new Array();
     for (var i = 0; i < g_floatyText.length; ++i) {
         if (g_floatyText[i].render()) {
@@ -157,7 +156,7 @@ function renderLoop() {
     }
     delete g_floatyText;
     g_floatyText = remainingText;
-
+    //storing enemies
     var remainingEnemies = new Array();
     for (var i = 0; i < g_enemies.length; ++i) {
         if (g_enemies[i].render()) {
@@ -201,7 +200,7 @@ function renderLoop() {
     g_levelDirector.renderSpecialText();
 
     g_foreground.render();
-
+    //on screen controller buttons
       if ( g_onscreenControls )
       {
          var ox = 40;
@@ -231,13 +230,7 @@ function renderLoop() {
     g_ship.renderPowers();
 }
 
-//--------------------------- BEGIN MUSIC LOOPING FUNCTIONS-------------//
-
-//
-// no browser currently correctly implements the looping feature
-// of the Autdio object yet, so we have to listen for the ended event
-// on our background music and play it again
-//
+//repeats the background music once it is terminated/over
 function start_level_1_loop(terminate) {
     var level_1_loop = document.getElementById("level_1_loop");
 
@@ -311,12 +304,7 @@ function dbg(str, append) {
 
 //
 // appends all game sounds to the document. called after the loading
-// screen itself is loaded.  The GameSounds.php file does a base64_encode
-// on the actual .ogg files residing on the server.  This is so the sound
-// objects can be repeatedly re-initialized without a network hit. This
-// is part of a workaround for Chrome because that browser does not 
-// correctly re-play short audio sounds (which is just about every sound
-// effect in the game)
+// screen itself is loaded. 
 //
 function loadGameSounds() {
     var fileref = document.createElement('script')
@@ -326,9 +314,7 @@ function loadGameSounds() {
     var agent = navigator.userAgent;
     if (agent.indexOf("MSIE") != -1) {
         //
-        // IE9 does not support OGG so we have to load a special
-        // version of the file that has MP3 encoded sound
-        //
+        // IE9 does not support OGG 
         //fileref.setAttribute("src", "GameSoundsIE9.js")
     }
 
@@ -336,7 +322,7 @@ function loadGameSounds() {
 
     document.getElementsByTagName("head")[0].appendChild(fileref)
 }
-
+//pause function when game is paused
 function pause() {
     if (g_paused == null)
         g_paused = false;

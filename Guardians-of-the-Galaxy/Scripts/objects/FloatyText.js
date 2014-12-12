@@ -1,3 +1,5 @@
+
+//FloatyText function to set the time for power up names
 function FloatyText(text, x, y, duration)
 {
    this.myText = text;
@@ -12,7 +14,7 @@ function FloatyText(text, x, y, duration)
    if ( duration != undefined )
       this.myDuration = duration;
 }
-
+//function to display the power up name for specific number of seconds
 FloatyText.prototype.render = function()
 {
    var textColor = this.myFrameCounter % g_rainbow.length;

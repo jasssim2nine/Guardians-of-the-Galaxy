@@ -1,3 +1,5 @@
+
+//function to display the menu state
 function bodyLoaded(revisit)
 {
    isChr();
@@ -75,9 +77,9 @@ function itemLoaded(item)
 {
    if (g_context == undefined)
    {
-      if ( !initCanvas() )
+     if ( !initCanvas() )
       {
-         dbg("Critical error initializing canvas.", false);
+        // dbg("", false);
          return;
       }
    }
@@ -112,9 +114,9 @@ function itemLoaded(item)
 
 
 
-//
+
 // Called the first time loadItem is invoked while the body is loading
-//
+
 function initCanvas()
 {
       g_canvas = document.getElementById('theCanvas');

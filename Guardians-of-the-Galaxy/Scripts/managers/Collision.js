@@ -1,4 +1,6 @@
-function collision(AX1,AY1,AX2,AY2, BX1,BY1,BX2,BY2)
+
+//collision function to check the collision of objects for x and y axes
+function collision(AX1, AY1, AX2, AY2, BX1, BY1, BX2, BY2)
 {
    if ( AX1 < BX1 )
    {

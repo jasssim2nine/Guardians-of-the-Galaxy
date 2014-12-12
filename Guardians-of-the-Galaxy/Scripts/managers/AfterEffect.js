@@ -1,3 +1,5 @@
+
+//function to show the effects after collisions
 function AfterEffect(id, x, y, velx, vely)
 {
    this.myName = id;
@@ -47,7 +49,7 @@ function AfterEffect(id, x, y, velx, vely)
       }
    }
 }
-
+//function to pull height and width after collision
 AfterEffect.prototype.render = function()
 {
    var pullWidth  = g_canvas.width  - this.myX;

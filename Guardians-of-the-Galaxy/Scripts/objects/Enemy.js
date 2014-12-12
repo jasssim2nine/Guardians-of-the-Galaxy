@@ -1,3 +1,5 @@
+
+//enemy function to create enemy
 function Enemy(id, x, y, velx, vely)
 {
    this.myX = x;
@@ -64,7 +66,7 @@ function Enemy(id, x, y, velx, vely)
    this.myPointValue = this.myHitPoints * 100;
 }
 
-
+//generating enemies
 Enemy.prototype.render = function()
 {
    var pullWidth  = g_canvas.width  - this.myX;
@@ -116,7 +118,7 @@ Enemy.prototype.render = function()
    return !retVal;
 }
 
-
+//collision effect for enemies
 Enemy.prototype.collisionOrOffscreen = function()
 {
    if ( this.myX > g_canvas.width )

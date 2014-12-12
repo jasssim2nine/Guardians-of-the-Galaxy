@@ -1,3 +1,5 @@
+
+//function to generate enemy shots
 function EnemyShot(name, x, y, velX, velY)
 {
  this.myFrameCounter = 0;
@@ -24,7 +26,7 @@ function EnemyShot(name, x, y, velX, velY)
 	this.myHeight = 2;
  }
 }
-
+//function to check for the collisions effects for alien boss
 EnemyShot.prototype.render = function()
 {
  if ( this.myX + this.myWidth < 0 )

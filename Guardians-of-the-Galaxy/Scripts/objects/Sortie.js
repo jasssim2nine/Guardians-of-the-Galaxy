@@ -1,17 +1,16 @@
-//class for the enemy ships 
-//ans sets the time when should they launched at used by levelDirector.js
+//starts the game time
 function Sortie(launchTime)
 {
  this.myLaunchTime = launchTime;
  this.myComponents = new Array();
  this.myLaunched = false;
 }
-
+//function to add enemies
 Sortie.prototype.add = function(id, x, y, velx, vely)
 {
  this.myComponents.push(new Enemy(id, x, y, velx, vely));
 }
-
+//function to sort enemies once the game is launched
 Sortie.prototype.launch = function()
 {
  if ( this.myLaunched )

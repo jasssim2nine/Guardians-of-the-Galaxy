@@ -10,7 +10,7 @@ function PeaShooter()
 
  this.myName = "pea";
 }
-
+//function to generate one or more pea/bullet shots
 PeaShooter.prototype.repeat = function()
 {
  if ( this.myFrameCounter > this.myRepeatRate )
@@ -21,7 +21,7 @@ PeaShooter.prototype.repeat = function()
 this.myFrameCounter++;
 return false;
 }
-
+//function to fire the pea/bullet
 PeaShooter.prototype.fire = function()
 {
  var sos = 0;

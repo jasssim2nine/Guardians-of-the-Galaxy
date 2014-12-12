@@ -1,3 +1,5 @@
+
+//initializing the background 
 function Background(element, velocity)
 {
    this.myImage = document.getElementById(element);
@@ -8,6 +10,7 @@ function Background(element, velocity)
    this.myHeight = this.myImage.height;
 }
 
+//function to reset the background
 Background.prototype.render = function()
 {
    var pullWidth = this.myWidth - this.myX;
@@ -16,7 +19,7 @@ Background.prototype.render = function()
       pullWidth = g_canvas.width;
    }
 
-   //dbg( this.myX + " , " + pullWidth, false);
+   
 
    g_context.drawImage(this.myImage,
                        this.myX, 0,

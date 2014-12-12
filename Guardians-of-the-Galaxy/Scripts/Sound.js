@@ -2,13 +2,13 @@ function Sound(name, multi)
 {
    if ( g_soundDataMap[name] == undefined )
    {
-      dbg("Can't instantiate sound called: " + name, false);
+      dbg(" " + name, false);
       return;
    }
 
    if ( multi == undefined || multi < 2 || multi == null)
    {
-      dbg("Bad instance number request " + name, false);
+      dbg(" " + name, false);
       multi = 2;
    }
 
@@ -46,13 +46,7 @@ Sound.prototype.play = function()
    }
 }
 
-//
-// webkit has trouble with very short sound effects (replaying them correctly)
-// so we have to re-load each instance after it plays. Chrome will also do
-// a hit to the internet if the resource for the sound is a url to an ogg file
-// which is why I keep the sound data as base64 encoded text stored in 
-// javascript variables.
-//
+//repeats the background sound
 Sound.prototype.playChr= function()
 {
    var played = false;
@@ -69,7 +63,7 @@ Sound.prototype.playChr= function()
       {
          if ( !played )
          {
-            //dbg(this.myName + " playing instance " + i + "<br>", true);
+            
             this.myInstanceArray[i].play();
             this.myLastInstancePlayed = i;
             played = true;
@@ -104,24 +98,12 @@ Sound.prototype.playChr= function()
       }
    }
 
-/*
-         dbg(this.myName + "[" + i + "]" + " ended=" +
-             this.myInstanceArray[i].ended + ". current time = " +
-             this.myInstanceArray[i].currentTime + "<br>", true);
 
-
-   if ( !played )
-   {
-      dbg(this.myName + " no instance played<br>", true);
-      if ( !loaded )
-         dbg(this.myName + " no instance loaded<br>", true);
-   }
-*/
 }
 
 function isChr()
 {
-    // dbg(navigator.userAgent, false);
+   
 
    if (navigator.userAgent.indexOf('AppleWebKit') != -1)
       g_isChr= true;

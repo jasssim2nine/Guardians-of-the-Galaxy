@@ -1,3 +1,4 @@
+//shot function to shoot pea/laser
 function Shot(weapon, x, y)
 {
  this.myFrameCounter = 0;
@@ -29,7 +30,7 @@ function Shot(weapon, x, y)
 	this.myHeight = 2;
  }
 }
-
+//reset the shot counter once the shot is off the canvas
 Shot.prototype.render = function()
 {
  if ( this.myX > g_canvas.width )

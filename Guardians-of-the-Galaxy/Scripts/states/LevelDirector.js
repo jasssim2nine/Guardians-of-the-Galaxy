@@ -1,3 +1,5 @@
+//initialize the game components
+
 function LevelDirector()
 {
    this.myCurrentLevel = 1;
@@ -17,7 +19,7 @@ function LevelDirector()
    this.myEOLLives = 2;
    this.myEOLScore = 0;
 }
-
+//starts the game
 LevelDirector.prototype.startLevel = function()
 {
    g_powerups = new Array();
@@ -29,18 +31,14 @@ LevelDirector.prototype.startLevel = function()
 
    this.resetBonus();
 
-   if ( g_gameState != "setup" )
-   {
-      dbg("level director setup error", false);
-      return;
-   }
-
+ 
+    //checks the currentlevel
    if ( this.myCurrentLevel == 1 )
    {
       g_background = new Background("starfield", 1);
       g_foreground = new Background("foreground", 2);
 
-      startLevel2Loop("terminate"); //TEMP
+      startLevel2Loop("terminate"); 
 
       var intro = document.getElementById("level_1_preloop");
       intro.volume = 1;
@@ -63,7 +61,7 @@ LevelDirector.prototype.startLevel = function()
    g_renderInterval = setInterval(renderLoop, 1000/24);
    g_clockInterval = setInterval(clockLoop, 100);
 }
-
+//reset the bonus accuracy and enemies destroyed
 LevelDirector.prototype.resetBonus = function()
 {
    g_shotsRequired = 0;
@@ -74,7 +72,7 @@ LevelDirector.prototype.resetBonus = function()
 
    this.myFleetBonus = 0;
 }
-
+//drops the latest powerup
 LevelDirector.prototype.dropSpecial = function(x,y,name)
 {
    var p = null;
@@ -139,9 +137,9 @@ LevelDirector.prototype.dropSpecial = function(x,y,name)
    else
       g_powerups.push( new Powerup("gem", x, y, velx, vely) );
       
-   //console.info("LevelDirector info: no powerup created.");
+   
 }
-
+//writes the special text i.e. the name of the power up whichever is collected
 LevelDirector.prototype.renderSpecialText = function()
 {
    if ( this.mySpecialText == null )
@@ -155,6 +153,7 @@ LevelDirector.prototype.renderSpecialText = function()
                             g_canvas.width/2 - metrics.width/2, 200);
 }
 
+//launches/generates a wave of enemies
 LevelDirector.prototype.launchSorties = function()
 {
    var lastEnemyLaunched = null;
@@ -171,7 +170,7 @@ LevelDirector.prototype.launchSorties = function()
       if ( lastEnemyLaunched.myBoss )          //boolean
          this.myBoss = lastEnemyLaunched;
 }
-
+//function to calculate the wave bonus  per enemy wave
 LevelDirector.prototype.waveBonus = function(maxFleetBonus)
 {
       this.myFleetBonus = maxFleetBonus;
@@ -187,7 +186,7 @@ LevelDirector.prototype.waveBonus = function(maxFleetBonus)
       g_floatyText.push(f);
       g_bonusSound.play();
 }
-
+//function to calculate accuracy bonus after every 24 ships
 LevelDirector.prototype.accuracyBonus = function(maxFleetBonus)
 {
       if (isNaN(g_accuracy))
@@ -208,7 +207,7 @@ LevelDirector.prototype.accuracyBonus = function(maxFleetBonus)
       g_bonusSound.play();
 }
 
-
+//function to check if  the game is over which loops back to menu state
 LevelDirector.prototype.gameEvents = function()
 {
    if (g_gameState == "game_over")
@@ -245,7 +244,7 @@ LevelDirector.prototype.gameEvents = function()
       }
       return;
    }
-
+//levle 1
    if ( this.myCurrentLevel == 1 )
    {
       if ( this.myClock == 27000 || this.myClock == 61000 || 
@@ -274,7 +273,7 @@ LevelDirector.prototype.gameEvents = function()
             this.myBonusSequence = false;
          }
       }
-   
+   //condition to check if alien boss is approaching
       if ( this.myClock == 96500 )
       {
          start_level_1_loop("boss");
@@ -299,6 +298,8 @@ LevelDirector.prototype.gameEvents = function()
          this.initSorties();
       }
    }
+
+       //level 2
    else if ( this.myCurrentLevel == 2 )
    {
       if ( g_gameState == "boss_defeated" )
@@ -318,6 +319,7 @@ LevelDirector.prototype.gameEvents = function()
          g_ship.myRight = false;
          g_ship.myFiring = false;
       }
+          //initialize the level
       else if (g_gameState == "setup" )
       {
          if (this.myClock == 4000)
@@ -339,6 +341,7 @@ LevelDirector.prototype.gameEvents = function()
             this.startLevel();
          }
       }
+//generate 3 shots in 3 directions for alien boss
       else if ( this.myClock > 10000 )
       {
          if ( this.myClock % 2000 == 0 )
@@ -356,11 +359,12 @@ LevelDirector.prototype.gameEvents = function()
                                   -10, 0 );
             g_enemyProjectiles.push(s);
 
-            //dbg("total enemy shots: " + g_enemyProjectiles.length, false);
+            
          }
       }
    }
-   else if ( this.myCurrentLevel == 3 )  //L2SORT
+       //level 3
+   else if ( this.myCurrentLevel == 3 )  
    {
       if ( this.myClock < 6000 )
       {
@@ -376,12 +380,12 @@ LevelDirector.prototype.gameEvents = function()
    }
 }
 
-
+//function to push the enemies as per time frame
 LevelDirector.prototype.initSorties = function()
 {
    this.myBoss = null;
    this.mySorties = new Array();
-
+    //level 1 enemy waves
    if ( this.myCurrentLevel == 1 )
    {
       var sortie = new Sortie(2500);
@@ -503,17 +507,9 @@ LevelDirector.prototype.initSorties = function()
       this.mySorties.push(sortie);
 
 
-// testing code
-/*
-      g_ship.myWeapon = new Laser();
-      g_ship.myWeapon.myDoubled = true;
-      g_ship.myWeapon.myMaxOnScreen = 5;
-      g_ship.myVelocity = 5;
-      this.myClock = 96400;
-*/
-
 
    }
+       //boss level enemies and alien boss
    else if ( this.myCurrentLevel == 2 )
    {
       var sortie = new Sortie(6000);
