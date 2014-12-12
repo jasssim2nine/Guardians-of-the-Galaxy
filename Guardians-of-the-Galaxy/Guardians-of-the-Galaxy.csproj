@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\octocat.jpg" />
+    <Content Include="assets\images\octocat_darkwood_small.jpg" />
     <Content Include="assets\sounds\boss_loop.ogg" />
     <Content Include="assets\sounds\level_1_loop.ogg" />
     <Content Include="assets\sounds\level_1_preloop.ogg" />

@@ -1,3 +1,5 @@
+//class for the enemy ships 
+//ans sets the time when should they launched at used by levelDirector.js
 function Sortie(launchTime)
 {
  this.myLaunchTime = launchTime;

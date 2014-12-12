@@ -35,3 +35,11 @@ canvas#theCanvas {
 embed#preziembed_dihpev1cbbmm {
     margin-top: 5px;
 }
+
+#github {
+    background-image: url(../assets/images/octocat.jpg);
+    background-repeat:no-repeat;
+    width: 100%;
+    margin: auto;
+    height: 750px;
+}
